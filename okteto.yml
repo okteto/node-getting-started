@@ -1,0 +1,6 @@
+name: hello-world
+image: okteto/node:10
+command:
+- bash
+forward:
+- 3000:3000
