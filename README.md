@@ -31,18 +31,6 @@ With the Node Sample App deployed, run the following command:
 
 ```console
 $ okteto up
- ✓  Development environment activated
- ✓  Files synchronized
-    Namespace: cindy
-    Name:      hello-world
-    Forward:   3000 -> 3000
-               2345 -> 2345
-
-okteto>
-```
-
-```console
-$ okteto up
  ✓  Okteto Environment activated
  ✓  Files synchronized
  ✓  Your Okteto Environment is ready
@@ -131,11 +119,7 @@ Debugger listening on ws://0.0.0.0:9229/73d8d793-b0c3-4310-86ee-3a42938a5df1
 For help, see: https://nodejs.org/en/docs/inspector
 ```
 
-<<<<<<< HEAD
 Open the _Debug_ extension and run the *Connect to okteto* debug configuration (or press the F5 shortcut):
-=======
-Open the _Debug_ extension and run the *Connect to okteto* launch configuration:
->>>>>>> Add refence to ".stignore"
 
 ```json
 {
