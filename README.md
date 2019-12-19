@@ -93,7 +93,7 @@ Hello world!
 
 Open the `app.js` file in your favorite local IDE and modify the response message on line 9 to be *Hello world from the cluster!*. Save your changes.
 
-```node
+```javascript
   res.end(`Hello world from the cluster!`);
 ```
 
