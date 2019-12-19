@@ -62,7 +62,7 @@ The `okteto up` command starts a [Kubernetes development environment](https://ok
 - Container ports 3000 (the application) and 9229 (the debugger) are forwarded to localhost.
 - A remote shell is started in your Kubernetes development environment. Build, test and run your application as if you were in your local machine.
 
-> All of this (and more) can be customized via the `okteto.yml` [manifest file](https://okteto.com/docs/reference/manifest/index.html).
+> All of this (and more) can be customized via the `okteto.yml` [manifest file](https://okteto.com/docs/reference/manifest/index.html). You can also use the file `.stignore` to skip files from file synchronization. This is useful to avoid synchronizing build artifacts, git metadata or the `node_modules` folder.
 
 To run the application in hot-reload mode, execute in the remote shell:
 
@@ -131,7 +131,11 @@ Debugger listening on ws://0.0.0.0:9229/73d8d793-b0c3-4310-86ee-3a42938a5df1
 For help, see: https://nodejs.org/en/docs/inspector
 ```
 
+<<<<<<< HEAD
 Open the _Debug_ extension and run the *Connect to okteto* debug configuration (or press the F5 shortcut):
+=======
+Open the _Debug_ extension and run the *Connect to okteto* launch configuration:
+>>>>>>> Add refence to ".stignore"
 
 ```json
 {
