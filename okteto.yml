@@ -1,6 +1,8 @@
 name: hello-world
-image: okteto/node:10
+image: okteto/hello-world:node-dev
 command: ["bash"]
 forward:
   - 3000:3000
   - 9229:9229
+persistentVolume:
+  enabled: false
