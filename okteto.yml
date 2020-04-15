@@ -4,5 +4,3 @@ command: ["bash"]
 forward:
   - 3000:3000
   - 9229:9229
-persistentVolume:
-  enabled: false
