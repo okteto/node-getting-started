@@ -1,8 +1,12 @@
 FROM node:13-slim AS base
 
 WORKDIR /app
-COPY  app.js app.js
 
-EXPOSE 8080
+ADD package.json .
+RUN npm install
 
-CMD node app.js
+COPY index.js .
+
+EXPOSE 3000
+
+CMD npm start
