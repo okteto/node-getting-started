@@ -1,9 +1,0 @@
-name: hello-world
-image: okteto/hello-world:node-dev
-command: ["bash"]
-workdir: /app
-forward:
-  - 3000:3000
-  - 9229:9229
-persistentVolume:
-  enabled: false

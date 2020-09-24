@@ -8,7 +8,7 @@
             "address": "localhost",
             "port": 9229,
             "localRoot": "${workspaceFolder}",
-            "remoteRoot": "/src",
+            "remoteRoot": "/usr/src/app",
             "skipFiles": [
                 "<node_internals>/**"
             ]

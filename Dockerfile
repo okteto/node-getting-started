@@ -1,17 +1,12 @@
 FROM node:13-slim AS base
+
 WORKDIR /app
-COPY  app.js app.js
 
-#################################
+ADD package.json .
+RUN npm install
 
-FROM base AS dev
+COPY index.js .
 
-COPY bashrc /root/.bashrc
-RUN npm install -g nodemon
+EXPOSE 3000
 
-#################################
-
-FROM base AS prod
-
-EXPOSE 8080
-CMD node app.js
+CMD npm start
