@@ -5,13 +5,14 @@
     "main": "index.js",
     "scripts": {
         "start": "nodemon index.js",
-        "debug": "node --inspect-brk=0.0.0.0:9229 app.js"
+        "debug": "node --inspect-brk=0.0.0.0:9229 index.js"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/okteto/node-getting-started.git"
     },
     "dependencies": {
+        "nodemon": "^2.0.2",
         "express": "^4.17.1"
     }
 }

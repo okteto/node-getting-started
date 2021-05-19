@@ -1,6 +1,9 @@
-FROM node:13-slim AS base
+FROM node:14-slim
 
-WORKDIR /app
+# setup okteto message
+COPY bashrc /root/.bashrc
+
+WORKDIR /usr/src/app
 
 ADD package.json .
 RUN npm install
