@@ -1,29 +1,10 @@
 name: node-getting-started
-
-# The build section defines how to build the images of your development environment
-# More info: https://www.okteto.com/docs/reference/manifest/#build
 build:
-
-  # You can use the following env vars to refer to this image in your deploy commands:
-  #  - OKTETO_BUILD_NODE-GETTING-STARTED_REGISTRY: image registry
-  #  - OKTETO_BUILD_NODE-GETTING-STARTED_REPOSITORY: image repo
-  #  - OKTETO_BUILD_NODE-GETTING-STARTED_IMAGE: image name
-  #  - OKTETO_BUILD_NODE-GETTING-STARTED_TAG: image tag
   node-getting-started:
     context: .
     dockerfile: Dockerfile
-
-# The deploy section defines how to deploy your development environment
-# More info: https://www.okteto.com/docs/reference/manifest/#deploy
 deploy:
   - kubectl apply -f k8s.yml
-
-# The dependencies section defines other git repositories to be deployed as part of your development environment
-# More info: https://www.okteto.com/docs/reference/manifest/#dependencies
-# dependencies:
-#   - https://github.com/okteto/sample
-# The dev section defines how to activate a development container
-# More info: https://www.okteto.com/docs/reference/manifest/#dev
 dev:
   node-getting-started:
     image: okteto/dev:latest
@@ -37,4 +18,3 @@ dev:
     forward:
       - 3000:3000
       - 9229:9229
-
