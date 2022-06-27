@@ -27,12 +27,13 @@ deploy:
 dev:
   node-getting-started:
     image: okteto/dev:latest
-    command: bash
+    autocreate: true
+    command: npm i && npm run start
     workdir: /usr/src/app
     sync:
       - .:/usr/src/app
     environment:
       - name=$USER
     forward:
-      - 8080:80
+      - 3000:3000
 
