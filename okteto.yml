@@ -36,4 +36,5 @@ dev:
       - name=$USER
     forward:
       - 3000:3000
+      - 9229:9229
 
