@@ -6,7 +6,6 @@ deploy:
   - kubectl apply -f k8s.yml
 dev:
   hello-world:
-    image: okteto/dev:latest
     command: bash
     sync:
       - .:/usr/src/app
