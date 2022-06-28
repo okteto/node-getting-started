@@ -1,18 +1,14 @@
-name: hello-world
 build:
   hello-world:
+    image: okteto.dev/node-hello-world:1.0.0
     context: .
-    dockerfile: Dockerfile
 deploy:
   - kubectl apply -f k8s.yml
 dev:
   hello-world:
     image: okteto/dev:latest
-    autocreate: true
-    command: npm i && npm run start
-    workdir: /usr/src/app
+    command: bash
     sync:
       - .:/usr/src/app
     forward:
-      - 3000:3000
       - 9229:9229
