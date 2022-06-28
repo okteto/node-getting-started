@@ -1,20 +1,18 @@
-name: node-getting-started
+name: hello-world
 build:
-  node-getting-started:
+  hello-world:
     context: .
     dockerfile: Dockerfile
 deploy:
   - kubectl apply -f k8s.yml
 dev:
-  node-getting-started:
+  hello-world:
     image: okteto/dev:latest
     autocreate: true
     command: npm i && npm run start
     workdir: /usr/src/app
     sync:
       - .:/usr/src/app
-    environment:
-      - name=$USER
     forward:
       - 3000:3000
       - 9229:9229
