@@ -13,8 +13,8 @@ spec:
         app: hello-world
     spec:
       containers:
+      - image: okteto.dev/node-hello-world:1.0.0
         name: hello-world
-        image: okteto.dev/node-hello-world:1.0.0
 
 ---
 
