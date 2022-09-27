@@ -1,7 +1,7 @@
 {
-    "name": "node-getting-started",
+    "name": "openid",
     "version": "1.0.0",
-    "description": "Hello world app with express 4",
+    "description": "openid sample",
     "main": "index.js",
     "scripts": {
         "start": "nodemon index.js",

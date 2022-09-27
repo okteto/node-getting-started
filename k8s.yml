@@ -1,49 +1,49 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-world
+  name: openid
 spec:
   selector:
     matchLabels:
-      app: hello-world
+      app: openid
   template:
     metadata:
       labels:
-        app: hello-world
+        app: openid
     spec:
       containers:
-      - image: okteto.dev/node-hello-world:1.0.0
-        name: hello-world
+      - image: okteto.dev/node-openid:1.0.0
+        name: openid
 
 ---
 
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-world
+  name: openid
 spec:
   type: ClusterIP
   ports:
-  - name: "hello-world"
+  - name: "openid"
     port: 3000
   selector:
-    app: hello-world
+    app: openid
 
 ---
 
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: hello-world
+  name: openid
   annotations:
-    dev.okteto.com/generate-host: hello-world
+    dev.okteto.com/generate-host: openid
 spec:
   rules:
     - http:
         paths:
           - backend:
               service:
-                name: hello-world
+                name: openid
                 port:
                   number: 3000
             path: /
