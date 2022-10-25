@@ -1,13 +1,5 @@
-build:
-  openid:
-    image: okteto.dev/openid:1.0.0
-    context: .
-deploy:
-  - kubectl apply -f k8s.yml
 dev:
-  openid:
+  system-tests:
+    image: okteto/node:16
+    autocreate: true
     command: bash
-    sync:
-      - .:/usr/src/app
-    forward:
-      - 9229:9229
