@@ -1,11 +1,19 @@
 build:
   hello-world:
-    image: okteto.dev/node-hello-world:1.0.0
     context: .
+
 deploy:
-  - kubectl apply -f k8s.yml
+  - env | grep OKTETO_BUILD
+  - helm repo add helm-skeleton "git+https://github.com/okteto/helm-skeleton@chart?ref=main" ||  helm repo update
+  - helm upgrade --install hello-world helm-skeleton/chart
+    --set image=${OKTETO_BUILD_HELLO_WORLD_IMAGE}
+    -f values-okteto.yml
+
 dev:
   hello-world:
+    selector:
+        app.kubernetes.io/instance: hello-world
+        app.kubernetes.io/name: chart
     command: bash
     sync:
       - .:/usr/src/app
