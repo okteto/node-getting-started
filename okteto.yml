@@ -3,7 +3,6 @@ build:
     context: .
 
 deploy:
-  - env | grep OKTETO_BUILD
   - helm repo add helm-skeleton "git+https://github.com/okteto/helm-skeleton@chart?ref=main" ||  helm repo update
   - helm upgrade --install hello-world helm-skeleton/chart
     --set image=${OKTETO_BUILD_HELLO_WORLD_IMAGE}
