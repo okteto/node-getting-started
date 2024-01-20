@@ -1,7 +1,3 @@
-build:
-  hello-world:
-    image: okteto.dev/node-hello-world:1.0.0
-    context: .
 deploy:
   - kubectl apply -f k8s.yml
 dev:
