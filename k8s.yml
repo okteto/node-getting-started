@@ -12,7 +12,7 @@ spec:
         app: hello-world
     spec:
       containers:
-      - image: okteto/node-getting-started:hello-world
+      - image: ghcr.io/okteto/node-getting-started:hello-world
         name: hello-world
 
 ---
