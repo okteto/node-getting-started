@@ -1,7 +1,7 @@
 {
     "name": "node-getting-started",
     "version": "1.0.0",
-    "description": "Hello world app with express 4",
+    "description": "Hello world app with express 5",
     "main": "index.js",
     "scripts": {
         "start": "nodemon index.js",
