@@ -5,13 +5,14 @@
             "name": "Connect to okteto",
             "type": "node",
             "request": "attach",
-            "address": "localhost",
+            "address": "127.0.0.1",
             "port": 9229,
             "localRoot": "${workspaceFolder}",
             "remoteRoot": "/usr/src/app",
+            "restart": true,
             "skipFiles": [
                 "<node_internals>/**"
             ]
-        },
+        }
     ]
 }

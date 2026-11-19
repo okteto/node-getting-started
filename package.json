@@ -4,15 +4,14 @@
     "description": "Hello world app with express 5",
     "main": "index.js",
     "scripts": {
-        "start": "nodemon index.js",
-        "debug": "node --inspect=0.0.0.0:9229 index.js"
+        "start": "node index.js",
+        "test": "node --test"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/okteto/node-getting-started.git"
     },
     "dependencies": {
-        "express": "^5.3.0",
-        "nodemon": "^3.1.14"
+        "express": "^5.3.0"
     }
 }

@@ -1,9 +1,34 @@
+build:
+  dev:
+    context: .
+    target: dev
+  hello-world:
+    context: .
+    target: prod
+    depends_on:
+      - dev
+
 deploy:
-  - kubectl apply -f k8s.yml
+  - envsubst < k8s.yml | kubectl apply -f -
+
+test:
+  unit:
+    image: ${OKTETO_BUILD_DEV_IMAGE}
+    caches:
+      - /root/.npm
+    commands:
+      - npm ci
+      - node --test --test-reporter=spec --test-reporter-destination=stdout --test-reporter=junit --test-reporter-destination=junit.xml
+    artifacts:
+      - junit.xml
+
 dev:
   hello-world:
-    command: bash
+    image: ${OKTETO_BUILD_DEV_IMAGE}
+    command: node --watch --inspect index.js
     sync:
       - .:/usr/src/app
+    persistentVolume:
+      enabled: false
     forward:
       - 9229:9229
