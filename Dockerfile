@@ -1,15 +1,15 @@
-FROM node:26-slim
-
-# setup okteto message
-COPY bashrc /root/.bashrc
+FROM node:26.13.1-trixie-slim AS dev
 
 WORKDIR /usr/src/app
+COPY package.json package-lock.json ./
+RUN npm ci
+COPY . .
 
-ADD package.json .
-RUN npm install
+FROM node:26.13.1-trixie-slim AS prod
 
-COPY index.js .
-
-EXPOSE 3000
-
-CMD npm start
+WORKDIR /usr/src/app
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev
+COPY . .
+ENV NODE_ENV=production
+CMD ["node", "index.js"]
