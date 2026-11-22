@@ -1,8 +1,10 @@
-# Send only what "npm ci" and the application need to the build context.
+# Send only what "npm ci" and the application need to the build context: the
+# package files, the JavaScript files, and the page that the application serves.
 # Anything else (.git, node_modules, manifests, docs) would bloat the images
 # and invalidate the build cache on every unrelated change.
 *
 !package.json
 !package-lock.json
 !**/*.js
+!static
 **/node_modules/**
